@@ -1,0 +1,57 @@
+void wavePrint(int **input, int nRows, int mCols)
+{
+    //Write your code here
+    int count = 1;
+    
+    while(count<=mCols)
+    {
+    if(count%2 != 0)
+    {
+   
+        for(int j=0;j<nRows;j++)
+        {
+            cout<<input[j][count-1]<<" ";
+        }
+    
+    }
+    else
+        {
+       
+        for(int j=nRows-1;j>=0;j--)
+        {
+            cout<<input[j][count-1]<<" ";
+        }
+            }
+        
+        count++;
+    }
+    
+    
+}
+
+#include <iostream>
+using namespace std;
+
+// #include "solution.h"
+
+int main()
+{
+	int t;
+	cin >> t;
+	while (t--)
+	{
+		int row, col;
+		cin >> row >> col;
+		int **input = new int *[row];
+		for (int i = 0; i < row; i++)
+		{
+			input[i] = new int[col];
+			for (int j = 0; j < col; j++)
+			{
+				cin >> input[i][j];
+			}
+		}
+		wavePrint(input, row, col);
+		cout << endl;
+	}
+}
